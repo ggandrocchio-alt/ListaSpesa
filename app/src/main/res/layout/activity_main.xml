@@ -1,6 +1,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="20dp">
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lista della spesa" android:textSize="28sp" android:textStyle="bold" />
     <TextView android:id="@+id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="0 articoli" android:textSize="14sp" />
+    <TextView android:id="@+id/accountStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Accedi con Google per condividere una lista" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/signInButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Accedi con Google" />
+        <Button android:id="@+id/signOutButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Esci" android:visibility="gone" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/listsSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <EditText android:id="@+id/listNameInput" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Nome nuova lista" android:inputType="textCapSentences" />
+            <Button android:id="@+id/createListButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crea" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <EditText android:id="@+id/inviteInput" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Codice invito" android:inputType="textNoSuggestions" />
+            <Button android:id="@+id/joinListButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Entra" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Spinner android:id="@+id/listSpinner" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:contentDescription="Seleziona lista" />
+            <Button android:id="@+id/shareListButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Condividi" />
+        </LinearLayout>
+    </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center_vertical">
         <EditText android:id="@+id/itemInput" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Aggiungi un articolo" android:inputType="textCapSentences" />
         <Button android:id="@+id/addButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aggiungi" />
