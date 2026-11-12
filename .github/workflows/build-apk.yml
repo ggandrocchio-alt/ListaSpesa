@@ -16,13 +16,17 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
-      - uses: android-actions/setup-android@v4
+          java-version: '21'
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
       - name: Test Firestore access rules
         run: npm ci --no-audit --no-fund && npm run test:rules
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
       - name: Install Android SDK packages
         run: sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
       - name: Restore stable signing key
