@@ -1,0 +1,9 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="20dp">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lista della spesa" android:textSize="28sp" android:textStyle="bold" />
+    <TextView android:id="@+id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="0 articoli" android:textSize="14sp" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center_vertical">
+        <EditText android:id="@+id/itemInput" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Aggiungi un articolo" android:inputType="textCapSentences" />
+        <Button android:id="@+id/addButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aggiungi" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/itemsList" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="16dp" />
+</LinearLayout>
