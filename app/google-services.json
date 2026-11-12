@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943297937162",
+    "project_id": "listaspesaandroid",
+    "storage_bucket": "listaspesaandroid.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943297937162:android:0c96b8f0348ae1d73184f3",
+        "android_client_info": {
+          "package_name": "com.example.listaspesa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLns-LnxCfZ-gNhL4z1biFibugvLW_n_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
