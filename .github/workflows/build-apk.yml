@@ -16,11 +16,31 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test Firestore access rules
+        run: npm ci --no-audit --no-fund && npm run test:rules
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v4
       - name: Install Android SDK packages
         run: sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+      - name: Restore stable signing key
+        if: github.event_name == 'push'
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          test -n "$KEYSTORE_B64"
+          printf '%s' "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/listaspesa-signing.p12"
+          echo "ANDROID_KEYSTORE_FILE=$RUNNER_TEMP/listaspesa-signing.p12" >> "$GITHUB_ENV"
       - name: Build debug APK
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:

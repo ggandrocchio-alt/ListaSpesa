@@ -12,7 +12,20 @@
           "package_name": "com.example.listaspesa"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "943297937162-s9986kea0jqr8qsq3h6mu6plrlqt9vn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.listaspesa",
+            "certificate_hash": "d239ecb126f45d013d47e048826df45099163054"
+          }
+        },
+        {
+          "client_id": "943297937162-96jjobc06cfn4hqjvgu1i87nhnc7egc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCLns-LnxCfZ-gNhL4z1biFibugvLW_n_M"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943297937162-96jjobc06cfn4hqjvgu1i87nhnc7egc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
